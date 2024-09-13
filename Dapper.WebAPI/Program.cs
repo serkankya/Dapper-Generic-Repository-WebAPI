@@ -1,7 +1,3 @@
-
-using Dapper.Business.Abstract;
-using Dapper.Business.Abstract.DapperORM;
-using Dapper.DataAccess.Concrete;
 using Dapper.DataAccess.Concrete.DapperORM;
 using Dapper.WebAPI.Containers;
 
@@ -13,20 +9,17 @@ namespace Dapper.WebAPI
 		{
 			var builder = WebApplication.CreateBuilder(args);
 
-			// Add services to the container.
-
 			builder.Services.AddControllers();
-			// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+
 			builder.Services.AddEndpointsApiExplorer();
 			builder.Services.AddSwaggerGen();
 
-			builder.Services.Configure<ContextOption>(builder.Configuration.GetSection(ContextOption.ConnectionString));
+			builder.Services.Configure<ContextOption>(builder.Configuration.GetSection(ContextOption.ConnectionString)); //Db
 
-			builder.Services.ContainerDependencies();
+			builder.Services.ContainerDependencies(); //Containers --> Extensions
 
 			var app = builder.Build();
 
-			// Configure the HTTP request pipeline.
 			if (app.Environment.IsDevelopment())
 			{
 				app.UseSwagger();

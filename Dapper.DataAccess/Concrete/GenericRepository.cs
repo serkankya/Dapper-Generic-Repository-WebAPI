@@ -1,20 +1,14 @@
 ﻿using Dapper.Business.Abstract;
 using Dapper.Business.Abstract.DapperORM;
-using Dapper.DataAccess.Concrete.DapperORM;
 using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Dapper;
 
 namespace Dapper.DataAccess.Concrete
 {
 	public class GenericRepository<T> : IGenericRepository<T> where T : class, new()
 	{
-		private readonly ISqlToolsProvider _sqlToolsProvider;
-		private readonly IDapperContext _dapperContext;
-		private readonly ILogger<GenericRepository<T>> _logger;
+		private readonly ISqlToolsProvider _sqlToolsProvider; //TableName, ColumnName, PropertyName
+		private readonly IDapperContext _dapperContext; //Db
+		private readonly ILogger<GenericRepository<T>> _logger; 
 
 		public GenericRepository(ISqlToolsProvider sqlToolsProvider, IDapperContext dapperContext, ILogger<GenericRepository<T>> logger)
 		{

@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Dapper.DataAccess.Concrete.DapperORM
+﻿namespace Dapper.DataAccess.Concrete.DapperORM
 {
 	public class ContextOption
 	{
+		//appsettings.json --> Dapper.WebAPI
 		public const string ConnectionString = "ConnectionStrings";
 
 		public string Connection { get; set; } = string.Empty;

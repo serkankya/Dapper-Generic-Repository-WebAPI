@@ -1,7 +1,6 @@
 ﻿using Dapper.Business.Abstract;
 using Dapper.Entities.Concrete;
 using Dapper.Entities.Requests.UserRequest;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Dapper.WebAPI.Controllers
@@ -34,6 +33,7 @@ namespace Dapper.WebAPI.Controllers
 		[HttpPost("InsertUser")]
 		public async Task<IActionResult> InsertUser(InsertUserRequest insertUserRequest)
 		{
+			//Create a new User entity from the request data (InsertUserRequst)
 			var user = new User
 			{
 				Username = insertUserRequest.Username,
@@ -48,6 +48,7 @@ namespace Dapper.WebAPI.Controllers
 		[HttpPut("UpdateUser")]
 		public async Task<IActionResult> UpdateUser(UpdateUserRequest updateUserRequest)
 		{
+			// Create a User entity with updated data from the request (UpdateUserRequest)
 			var user = new User
 			{
 				UserId = updateUserRequest.UserId,

@@ -1,7 +1,7 @@
-﻿using Dapper.Business.Abstract.DapperORM;
-using Dapper.Business.Abstract;
-using Dapper.DataAccess.Concrete.DapperORM;
+﻿using Dapper.Business.Abstract;
+using Dapper.Business.Abstract.DapperORM;
 using Dapper.DataAccess.Concrete;
+using Dapper.DataAccess.Concrete.DapperORM;
 
 namespace Dapper.WebAPI.Containers
 {

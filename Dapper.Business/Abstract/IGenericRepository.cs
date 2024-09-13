@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Dapper.Business.Abstract
+﻿namespace Dapper.Business.Abstract
 {
 	public interface IGenericRepository<T> where T : class, new()
 	{
